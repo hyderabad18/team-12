@@ -25,6 +25,39 @@
         app:layout_constraintVertical_bias="0.163"
         app:srcCompat="@mipmap/iandeye" />
 
+
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Usertype:"
+            android:layout_marginRight="30dp"/>
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/radioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Volunteer" />
+
+            <RadioButton
+                android:id="@+id/radioButton2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Student" />
+        </RadioGroup>
+    </LinearLayout>
+
     <com.beardedhen.androidbootstrap.BootstrapEditText
         android:id="@+id/etUserName"
 
@@ -38,26 +71,6 @@
 
 
         android:hint="Username"
-        android:ems="10"
-        android:inputType="textPersonName"
-
-        app:bootstrapSize="md"
-        app:bootstrapBrand="info"
-        app:roundedCorners="true"
-        />
-
-    <com.beardedhen.androidbootstrap.BootstrapEditText
-        android:id="@+id/etAge"
-
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-
-
-        android:layout_marginBottom="5dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-
-        android:hint="Age"
         android:ems="10"
         android:inputType="textPersonName"
 
