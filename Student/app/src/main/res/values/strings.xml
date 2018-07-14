@@ -1,6 +1,0 @@
-<resources>
-    <string name="app_name">Student</string>
-    <string name="spinner_title">Select Category</string>
-    <string name="country_prompt"></string>
-<string name="country_arrays"></string>
-</resources>
