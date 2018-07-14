@@ -40,7 +40,7 @@
         android:text="Welcome admin "
         />
 
-    <com.beardedhen.androidbootstrap.BootstrapEditText
+    <!--<com.beardedhen.androidbootstrap.BootstrapEditText
         android:layout_marginTop="50dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
@@ -58,7 +58,23 @@
         app:bootstrapSize="md"
         app:bootstrapBrand="info"
         app:roundedCorners="true"
-        />
+        />-->
+    <com.beardedhen.androidbootstrap.BootstrapButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text=" Download File "
+        android:id="@+id/download"
+
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
+        android:elevation="15dp"
+
+        app:bootstrapBrand="primary"
+        app:bootstrapSize="lg"
+        app:buttonMode="regular"
+        app:showOutline="false"
+        app:roundedCorners="true"/>
 
     <LinearLayout
         android:layout_width="match_parent"
