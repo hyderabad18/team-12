@@ -9,6 +9,30 @@
     android:background="@mipmap/background"
     tools:context=".MainActivity">
 
+        <com.beardedhen.androidbootstrap.BootstrapButton
+        android:id="@+id/logout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Logout"
+
+
+        android:layout_marginBottom="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="140dp"
+        android:elevation="15dp"
+
+        app:bootstrapBrand="danger"
+        app:bootstrapSize="lg"
+        app:buttonMode="regular"
+        app:showOutline="false"
+        app:roundedCorners="true"
+
+        />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
         <com.beardedhen.androidbootstrap.BootstrapEditText
             android:layout_marginTop="20dp"
             android:layout_marginLeft="10dp"
@@ -23,10 +47,20 @@
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
             android:scrollbars="vertical"
+            android:drawableRight="@mipmap/search_icon"
             app:bootstrapSize="md"
             app:bootstrapBrand="info"
             app:roundedCorners="true"
         />
+           <!-- <ImageView
+                android:id="@+id/ivProfilePic"
+                android:layout_height="50dp"
+                android:layout_width="50dp"
+                android:layout_marginTop="20dp"
+                app:srcCompat="@mipmap/searchicon"
+                />-->
+
+        </LinearLayout>
 
         <com.beardedhen.androidbootstrap.BootstrapButton
             android:layout_width="wrap_content"
@@ -43,5 +77,12 @@
             app:buttonMode="regular"
             app:showOutline="false"
             app:roundedCorners="true"/>
+    <ImageView
+        android:id="@+id/okicon"
+        android:layout_height="50dp"
+        android:layout_width="50dp"
+        android:layout_marginTop="50dp"
+        android:visibility="invisible"
+        app:srcCompat="@mipmap/ok"/>
 
     </LinearLayout>
