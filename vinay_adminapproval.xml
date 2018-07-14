@@ -5,7 +5,28 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@mipmap/background"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:gravity="center_horizontal">
+
+    <com.beardedhen.androidbootstrap.BootstrapButton
+        android:id="@+id/logout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Logout"
+
+
+        android:layout_marginBottom="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="140dp"
+        android:elevation="15dp"
+
+        app:bootstrapBrand="danger"
+        app:bootstrapSize="lg"
+        app:buttonMode="regular"
+        app:showOutline="false"
+        app:roundedCorners="true"
+
+        />
 
     <com.beardedhen.androidbootstrap.BootstrapLabel
         android:layout_width="match_parent"
@@ -28,6 +49,7 @@
 
         android:inputType="textMultiLine"
         android:minLines="2"
+        android:hint="Book Name"
 
         android:gravity="top|left"
         android:layout_height="wrap_content"
