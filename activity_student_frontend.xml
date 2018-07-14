@@ -7,7 +7,7 @@
     android:orientation="vertical"
     tools:context="in.jpmc.duplicate.student_frontend"
     tools:showIn="@layout/activity_student_frontend">
-
+//frontend
     <TextView
         android:id="@+id/textView3"
         android:layout_width="394dp"
