@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:background="@mipmap/background"
+    tools:context=".MainActivity">
+
+    <com.beardedhen.androidbootstrap.BootstrapButton
+        android:id="@+id/logout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Logout"
+
+
+        android:layout_marginBottom="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="140dp"
+        android:elevation="15dp"
+
+        app:bootstrapBrand="danger"
+        app:bootstrapSize="lg"
+        app:buttonMode="regular"
+        app:showOutline="false"
+        app:roundedCorners="true"
+
+        />
+
+
+
+
+        <com.beardedhen.androidbootstrap.BootstrapEditText
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+
+            android:inputType="textMultiLine"
+            android:hint="Phone Number"
+            android:id="@+id/phonenumber"
+
+
+            android:gravity="top|left"
+            android:minLines="2"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:scrollbars="vertical"
+
+            app:bootstrapSize="md"
+            app:bootstrapBrand="info"
+            app:roundedCorners="true"
+            />
+
+
+        <com.beardedhen.androidbootstrap.BootstrapEditText
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:id="@+id/message"
+
+            android:inputType="textMultiLine"
+            android:hint="Message"
+
+
+            android:gravity="top|left"
+            android:minLines="2"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:scrollbars="vertical"
+
+            app:bootstrapSize="md"
+            app:bootstrapBrand="info"
+            app:roundedCorners="true"
+        />
+
+
+
+    <com.beardedhen.androidbootstrap.BootstrapButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" Send "
+        android:id="@+id/btnSend"
+
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:elevation="15dp"
+
+        app:bootstrapBrand="success"
+        app:bootstrapSize="lg"
+        app:buttonMode="regular"
+        app:showOutline="false"
+        app:roundedCorners="true"/>
+    <ImageView
+        android:id="@+id/okicon"
+        android:layout_height="50dp"
+        android:layout_width="50dp"
+        android:layout_marginTop="50dp"
+        android:visibility="invisible"
+        app:srcCompat="@mipmap/ok"/>
+
+</LinearLayout>
