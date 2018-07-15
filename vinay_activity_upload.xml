@@ -4,9 +4,30 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
+    android:gravity="center_horizontal"
     android:orientation="vertical"
+    android:background="@mipmap/background"
     tools:context="in.jpmc.student.Upload">
+
+    <com.beardedhen.androidbootstrap.BootstrapButton
+        android:id="@+id/logout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Logout"
+
+
+        android:layout_marginBottom="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="140dp"
+        android:elevation="15dp"
+
+        app:bootstrapBrand="danger"
+        app:bootstrapSize="lg"
+        app:buttonMode="regular"
+        app:showOutline="false"
+        app:roundedCorners="true"
+
+        />
 
     <com.beardedhen.androidbootstrap.BootstrapButton
         android:id="@+id/selectFile"
@@ -14,6 +35,7 @@
         android:text="Select File"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:elevation="15dp"
 
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
@@ -30,6 +52,7 @@
         android:text="Upload File"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:elevation="15dp"
 
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"

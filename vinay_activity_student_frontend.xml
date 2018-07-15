@@ -7,7 +7,9 @@
     android:orientation="vertical"
     android:gravity="center_horizontal"
     android:background="@mipmap/background"
-    tools:context="in.jpmc.student.ProfileActivity">
+    tools:context="in.jpmc.duplicate.student_frontend"
+    tools:showIn="@layout/activity_student_frontend">
+
 
     <com.beardedhen.androidbootstrap.BootstrapButton
         android:id="@+id/logout"
@@ -29,80 +31,32 @@
 
         />
 
-    <!--<ImageView
-        android:id="@+id/ivProfilePic"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        app:srcCompat="@mipmap/iandeye" />-->
-
-    <com.beardedhen.androidbootstrap.BootstrapEditText
-        android:id="@+id/tvProfileName"
-
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-
-        android:layout_marginBottom="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-
-        android:hint="Name"
-        android:ems="10"
-
-        app:bootstrapSize="md"
-        app:bootstrapBrand="info"
-        app:roundedCorners="true"
-        />
-
-
-    <com.beardedhen.androidbootstrap.BootstrapEditText
-        android:id="@+id/tvProfileAge"
-
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-
-        android:layout_marginBottom="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-
-        android:hint="Age"
-        android:ems="10"
-
-        app:bootstrapSize="md"
-        app:bootstrapBrand="info"
-        app:roundedCorners="true"
-        />
-
-    <com.beardedhen.androidbootstrap.BootstrapEditText
-        android:id="@+id/tvProfileEmail"
-
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-
-        android:layout_marginBottom="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-
-        android:hint="Email"
-        android:ems="10"
-
-        app:bootstrapSize="md"
-        app:bootstrapBrand="info"
-        app:roundedCorners="true"
-        />
-
 
     <com.beardedhen.androidbootstrap.BootstrapButton
-        android:id="@+id/btnProfileUpdate"
-        android:text="Edit"
+        android:id="@+id/b1"
+        android:text="Maths"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:elevation="15dp"
 
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
+
+        app:bootstrapBrand="success"
+        app:bootstrapSize="lg"
+        app:buttonMode="regular"
+        app:showOutline="false"
+        app:roundedCorners="true"
+        />
+    <com.beardedhen.androidbootstrap.BootstrapButton
+        android:id="@+id/b2"
+        android:text="Social"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:elevation="15dp"
+
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
 
         app:bootstrapBrand="success"
         app:bootstrapSize="lg"
@@ -111,16 +65,66 @@
         app:roundedCorners="true"
         />
 
-
     <com.beardedhen.androidbootstrap.BootstrapButton
-        android:id="@+id/btnChangePassword"
-        android:text="ChangePassword"
+        android:id="@+id/b3"
+        android:text="Science"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:elevation="15dp"
 
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
+
+        app:bootstrapBrand="success"
+        app:bootstrapSize="lg"
+        app:buttonMode="regular"
+        app:showOutline="false"
+        app:roundedCorners="true"
+        />
+
+    <com.beardedhen.androidbootstrap.BootstrapButton
+        android:id="@+id/b4"
+        android:text="Telugu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:elevation="15dp"
+
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+
+        app:bootstrapBrand="success"
+        app:bootstrapSize="lg"
+        app:buttonMode="regular"
+        app:showOutline="false"
+        app:roundedCorners="true"
+        />
+
+    <com.beardedhen.androidbootstrap.BootstrapButton
+        android:id="@+id/b5"
+        android:text="English"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="15dp"
+
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+
+        app:bootstrapBrand="success"
+        app:bootstrapSize="lg"
+        app:buttonMode="regular"
+        app:showOutline="false"
+        app:roundedCorners="true"
+        />
+
+    <com.beardedhen.androidbootstrap.BootstrapButton
+        android:id="@+id/b6"
+        android:text="Hindi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="15dp"
+
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
 
         app:bootstrapBrand="success"
         app:bootstrapSize="lg"
@@ -130,3 +134,4 @@
         />
 
 </LinearLayout>
+

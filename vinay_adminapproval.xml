@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center_horizontal"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@mipmap/background"
-    tools:context="in.jpmc.student.ProfileActivity">
+    android:orientation="vertical"
+    android:gravity="center_horizontal">
 
     <com.beardedhen.androidbootstrap.BootstrapButton
         android:id="@+id/logout"
@@ -29,76 +28,67 @@
 
         />
 
-    <!--<ImageView
-        android:id="@+id/ivProfilePic"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        app:srcCompat="@mipmap/iandeye" />-->
-
-    <com.beardedhen.androidbootstrap.BootstrapEditText
-        android:id="@+id/tvProfileName"
-
+    <com.beardedhen.androidbootstrap.BootstrapLabel
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        app:bootstrapHeading="h3"
+        app:bootstrapBrand="warning"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        app:roundedCorners="true"
+        android:text="Welcome admin "
+        />
 
-        android:layout_marginBottom="10dp"
-        android:layout_marginTop="10dp"
+    <!--<com.beardedhen.androidbootstrap.BootstrapEditText
+        android:layout_marginTop="50dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
 
-        android:hint="Name"
-        android:ems="10"
+        android:id="@+id/bookname"
 
-        app:bootstrapSize="md"
-        app:bootstrapBrand="info"
-        app:roundedCorners="true"
-        />
+        android:inputType="textMultiLine"
+        android:minLines="2"
+        android:hint="Book Name"
 
-
-    <com.beardedhen.androidbootstrap.BootstrapEditText
-        android:id="@+id/tvProfileAge"
-
-        android:layout_width="match_parent"
+        android:gravity="top|left"
         android:layout_height="wrap_content"
-
-        android:layout_marginBottom="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-
-        android:hint="Age"
-        android:ems="10"
-
-        app:bootstrapSize="md"
-        app:bootstrapBrand="info"
-        app:roundedCorners="true"
-        />
-
-    <com.beardedhen.androidbootstrap.BootstrapEditText
-        android:id="@+id/tvProfileEmail"
-
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-
-        android:layout_marginBottom="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-
-        android:hint="Email"
-        android:ems="10"
-
+        android:scrollbars="vertical"
         app:bootstrapSize="md"
         app:bootstrapBrand="info"
         app:roundedCorners="true"
-        />
-
-
+        />-->
     <com.beardedhen.androidbootstrap.BootstrapButton
-        android:id="@+id/btnProfileUpdate"
-        android:text="Edit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+
+        android:text=" Download File "
+        android:id="@+id/download"
+
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
+        android:elevation="15dp"
+
+        app:bootstrapBrand="primary"
+        app:bootstrapSize="lg"
+        app:buttonMode="regular"
+        app:showOutline="false"
+        app:roundedCorners="true"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:gravity="center">
+
+    <com.beardedhen.androidbootstrap.BootstrapButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text=" Approve "
+        android:id="@+id/b1"
 
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
@@ -108,25 +98,26 @@
         app:bootstrapSize="lg"
         app:buttonMode="regular"
         app:showOutline="false"
-        app:roundedCorners="true"
-        />
+        app:roundedCorners="true"/>
 
 
     <com.beardedhen.androidbootstrap.BootstrapButton
-        android:id="@+id/btnChangePassword"
-        android:text="ChangePassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text=" Reject "
+        android:id="@+id/b2"
 
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
         android:elevation="15dp"
 
-        app:bootstrapBrand="success"
+        app:bootstrapBrand="danger"
         app:bootstrapSize="lg"
         app:buttonMode="regular"
         app:showOutline="false"
-        app:roundedCorners="true"
-        />
+        app:roundedCorners="true"/>
+
+    </LinearLayout>
 
 </LinearLayout>
