@@ -20,6 +20,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -39,20 +40,23 @@ import com.google.firebase.storage.UploadTask;
 import java.io.File;
 import java.io.IOException;
 import java.net.URI;
+import java.util.HashMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Upload extends AppCompatActivity {
 
     private Button buttonChoose, buttonUpload;
-    private ImageView imageView;
+    //private ImageView imageView;
     private TextView tvStatus;
     StorageReference storageReference;
-    Uri uri;
+    static Uri uriGlobal;
     ProgressDialog progressDialog;
     FirebaseStorage storage;
     FirebaseDatabase database;
+    DatabaseReference db;
     private Uri filePath;
+    private EditText et;
     private static final int PICK_IMAGE_REQUEST = 1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,9 +64,11 @@ public class Upload extends AppCompatActivity {
         setContentView(R.layout.activity_upload);
         buttonChoose = (Button) findViewById(R.id.selectFile);
         buttonUpload = (Button) findViewById(R.id.uploadFile);
-        imageView=(ImageView)findViewById(R.id.imageView);
+        //imageView=(ImageView)findViewById(R.id.imageView);
         storage = FirebaseStorage.getInstance();
         storageReference = storage.getReference();
+        et=(EditText)findViewById(R.id.editText);
+        db= FirebaseDatabase.getInstance().getReference().child("User_01");
 
         buttonChoose.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -73,7 +79,7 @@ public class Upload extends AppCompatActivity {
         buttonUpload.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                uploadFile(uri);
+                uploadFile(filePath);
             }
         });
     }
@@ -83,7 +89,7 @@ public class Upload extends AppCompatActivity {
         Intent intent = new Intent();
         intent.setType("audio/*");
         intent.setAction(Intent.ACTION_GET_CONTENT);
-        startActivityForResult(Intent.createChooser(intent, "Select Picture"), PICK_IMAGE_REQUEST);
+        startActivityForResult(Intent.createChooser(intent, "Select Audio"), PICK_IMAGE_REQUEST);
     }
 
     //handling the image chooser activity result
@@ -95,7 +101,7 @@ public class Upload extends AppCompatActivity {
             try {
                 /*Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), filePath);
                 imageView.setImageBitmap(bitmap);*/
-                uri = data.getData();
+                Uri uri = data.getData();
                 //Log.i("uri",uri.toString());
                 uploadFile(uri);
 
@@ -107,13 +113,13 @@ public class Upload extends AppCompatActivity {
     }
     private void uploadFile(Uri uri) {
         //if there is a file to upload
-       if (uri != null) {
+        if (uri != null) {
             //displaying a progress dialog while upload is going on
             final ProgressDialog progressDialog = new ProgressDialog(this);
             progressDialog.setTitle("Uploading");
             progressDialog.show();
-
-            StorageReference riversRef = storageReference.child("audio/new_audio.mp3");//("images/pic.jpg");
+            uriGlobal = uri;
+            StorageReference riversRef = storageReference.child("audio/"+uri.getLastPathSegment());//("images/pic.jpg");
             riversRef.putFile(uri)
                     .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                         @Override
@@ -121,6 +127,24 @@ public class Upload extends AppCompatActivity {
                             //if the upload is successfull
                             //hiding the progress dialog
                             progressDialog.dismiss();
+                            String nam=et.getText().toString().trim();
+                            //Uri u=uri;
+                            HashMap<String,String> dataMap=new HashMap<String, String>();
+                            dataMap.put("Name",nam);
+                            dataMap.put("Email",uriGlobal.toString());
+                            db.push().setValue(dataMap).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                @Override
+                                public void onComplete(@NonNull Task<Void> task) {
+                                    if(task.isSuccessful())
+                                    {
+                                        Toast.makeText(Upload.this,"stored",Toast.LENGTH_SHORT).show();
+                                    }
+                                    else
+                                    {
+                                        Toast.makeText(Upload.this,"not stored",Toast.LENGTH_SHORT).show();
+                                    }
+                                }
+                            });
 
                             //and displaying a success toast
                             Toast.makeText(getApplicationContext(), "File Uploaded ", Toast.LENGTH_LONG).show();
@@ -150,8 +174,8 @@ public class Upload extends AppCompatActivity {
         }
         //if there is not any file
         else {
-           //you can display an error toast
-       }
+            //you can display an error toast
+        }
     }
 
 
